@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+    @user = @post.user
   end
 
   def new
@@ -18,7 +19,8 @@ class PostsController < ApplicationController
     @post = Post.new(
       content: params[:content],
       content_music: params[:content_music],
-      content_image: "sumtacticon.png"
+      content_image: "sumtacticon.png",
+      user_id: @current_user.id
     )
     if params[:content_music]
       @post.content_music = "#{@post.content}.mp3"
