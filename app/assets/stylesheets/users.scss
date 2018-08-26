@@ -1,0 +1,21 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "materialize/components/color";
+$primary-color: color("lime", "darken-2") !default;
+@import 'materialize';
+
+.tab-main {
+  float:left;
+  width: 70%;
+}
+
+.not-scroll {
+  margin-top: 60px;
+}
+
+.sub-user-image {
+  float: right;
+  width: 30%;
+}

@@ -1,0 +1,14 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">投稿する</h1>
+    <%= form_tag("/posts/create", {multipart: true}) do %>
+      <p>タイトル</p>
+      <input name="content">
+      <p>楽曲</p>
+      <input type="file" name="content_music">
+      <p>ジャケット</p>
+      <input type="file" name="content_image">
+      <input type="submit" value="投稿">
+    <% end %>
+  </div>
+</div>
