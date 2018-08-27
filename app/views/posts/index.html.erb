@@ -10,7 +10,7 @@
             <h2><%= link_to(post.content, "/posts/#{post.id}") %></h2>
           </div>
           <div class="user-name">
-            <%= link_to("@user.name", "/users/#{@user.id}") %>
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
           </div>
           <div class="music">
             <%= audio_tag("/content_music/#{post.content_music}", :controls => true) %>
