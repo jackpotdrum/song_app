@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   before_action :authenticate_user
 
+
   def index
     @posts = Post.all
   end
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by(id: params[:id])
     @user = @post.user
+    @like_count = Like.where(post_id: @post.id).count
   end
 
   def new
@@ -45,4 +47,5 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to("/posts/index")
   end
+
 end

@@ -5,12 +5,11 @@
       </div>
       <div class="tab-main">
         <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
-         <li class="tab"><a class="active" href="#test1">Test 1</a></li>
-         <li class="tab"><a href="#test2">Test 2</a></li>
+         <li class="tab"><a class="active" href="#test1">投稿した曲</a></li>
+         <li class="tab"><a href="#test2">いいね！した曲</a></li>
          <li class="tab"><a href="#test3">Test 3</a></li>
        </ul>
        <div id="test1" class="col s12">
-         <p>Test 1</p>
          <% @user.posts.each do |post| %>
          <div class="posts-index-item">
            <div class="jacket-image">
@@ -29,7 +28,23 @@
          <% end %>
        </div>
        <div id="test2" class="col s12">
-         <p>Test 2</p>
+         <% @likes.each do |like| %>
+           <% post = Post.find_by(id: like.post_id) %>
+           <div class="posts-index-item">
+             <div class="jacket-image">
+               <%= image_tag("/jacket_images/#{post.content_image}", :size => "200x200") %>
+             </div>
+             <div class="title">
+               <h2><%= link_to(post.content, "/posts/#{post.user.id}") %></h2>
+             </div>
+             <div class="user-name">
+               <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+             </div>
+             <div class="music">
+               <%= audio_tag("/content_music/#{post.content_music}", :controls => true) %>
+             </div>
+           </div>
+         <% end %>
        </div>
        <div id="test3" class="col s12">
          <p>Test 3</p>
