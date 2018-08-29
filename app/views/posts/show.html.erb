@@ -7,6 +7,7 @@
       <div class="title">
         <h2><%= @post.content %></h2>
       </div>
+<<<<<<< HEAD
       <div class="user-name">
         <%= link_to(@post.user.name, "/users/#{@post.user.id}") %>
       </div>
@@ -26,6 +27,8 @@
           <%= @like_count %>
         </div>
       </div>
+=======
+>>>>>>> parent of 0d6d1fa... いい感じ
       <div class="music">
         <%= audio_tag("/content_music/#{@post.content_music}", :controls => true) %>
       </div>
