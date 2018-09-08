@@ -7,4 +7,8 @@ class User < ApplicationRecord
   def posts
     return Post.where(user_id: self.id)
   end
+
+  has_many :likes
+  has_many :posts, through: :likes
+
 end

@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
 
+  def likes
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id)
+  end
+
   def create
     @user = User.new(name: params[:name],
                      email: params[:email],
@@ -62,15 +67,12 @@ class UsersController < ApplicationController
     redirect_to("/login")
   end
 
+
+
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
       redirect_to("/posts/index")
     end
-  end
-
-  def likes
-    @user = User.find_by(id: params[:id])
-    @likes = Like.where(user_id: @user.id)
   end
 
 end
