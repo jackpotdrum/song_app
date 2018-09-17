@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_09_12_012633) do
-=======
-ActiveRecord::Schema.define(version: 2018_08_29_075440) do
->>>>>>> origin/master
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
@@ -32,7 +28,6 @@ ActiveRecord::Schema.define(version: 2018_08_29_075440) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "following_id"
@@ -43,8 +38,6 @@ ActiveRecord::Schema.define(version: 2018_08_29_075440) do
     t.index ["following_id"], name: "index_relationships_on_following_id"
   end
 
-=======
->>>>>>> origin/master
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
