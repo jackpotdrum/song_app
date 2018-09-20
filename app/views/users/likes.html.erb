@@ -7,7 +7,7 @@
         <ul class="user-tabs">
          <li><%= link_to("投稿した曲", "/users/#{@user.id}") %></li>
          <li class="active"><%= link_to("いいね！した曲", "/users/#{@user.id}/likes") %></li>
-         <li>Test 3</li>
+         <!-- <li>Test 3</li> -->
        </ul>
        <div id="test2" class="col s12">
          <% if @likes.present? %>

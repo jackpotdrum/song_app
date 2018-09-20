@@ -7,7 +7,7 @@
         <ul class="user-tabs">
          <li class="active"><%= link_to("投稿した曲", "/users/#{@user.id}") %></li>
          <li><%= link_to("いいね！した曲", "/users/#{@user.id}/likes") %></li>
-         <li>Test 3</li>
+         <!-- <li>Test 3</li> -->
        </ul>
        <div id="test1" class="col s12">
          <% @user.posts.each do |post| %>
@@ -27,9 +27,9 @@
          </div>
          <% end %>
        </div>
-       <div id="test3" class="col s12">
+       <!-- <div id="test3" class="col s12">
          <p>Test 3</p>
-       </div>
+       </div> -->
       </div>
       <div class="sub-user-image">
         <div class="user-image">
@@ -45,7 +45,7 @@
           <% end %>
           <p><%= @user.name %></p>
 
-          <%= render 'follow_form'%>
+          <!-- <%= render 'follow_form'%> -->
 
         </div>
         <div class="introduction">

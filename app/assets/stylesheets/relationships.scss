@@ -1,3 +1,7 @@
 // Place all the styles related to the relationships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "materialize/components/color";
+$primary-color: color("lime", "lighten-4") !default;
+@import 'materialize';
